@@ -61,6 +61,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+
+        Button btn3 = (Button) findViewById(R.id.button3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), Main4Activity.class);
+                startIntent.putExtra("com.example.myapplication.NAPIS", "pobieram dane ...");
+                startActivity(startIntent);
+            }
+        });
     }
 
     private class GetData {

@@ -9,7 +9,7 @@ public class Person {
     private String ilosc_pakietow;
     private String ilosc_gratisow;
 
-    public Person(String nazwisko, String icoone_ilosc, String icoone_suma, String pierwszy_icoone, String pierwszy_ost_pakiet, String ilosc_pakietow, String ilosc_gratisow) {
+    public Person(String nazwisko, String icoone_ilosc, String icoone_suma , String pierwszy_icoone, String pierwszy_ost_pakiet, String ilosc_pakietow, String ilosc_gratisow) {
         this.nazwisko = nazwisko;
         this.icoone_ilosc = icoone_ilosc;
         this.icoone_suma = icoone_suma;
@@ -17,6 +17,17 @@ public class Person {
         this.pierwszy_ost_pakiet = pierwszy_ost_pakiet;
         this.ilosc_pakietow = ilosc_pakietow;
         this.ilosc_gratisow = ilosc_gratisow;
+    }
+
+    public Person(String nazwisko , String icoone_ilosc)
+    {
+        this.nazwisko = nazwisko;
+        this.icoone_ilosc = icoone_ilosc;
+        this.icoone_suma = "0";
+        this.pierwszy_icoone = "0";
+        this.pierwszy_ost_pakiet = "0";
+        this.ilosc_pakietow = "0";
+        this.ilosc_gratisow = "0";
     }
 
     public String getNazwiskonazwisko() {

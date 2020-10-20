@@ -18,18 +18,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class Main3Activity extends AppCompatActivity {
+
+public class Main5Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_main5);
         TextView tv = (TextView) findViewById(R.id.textView);
         tv.setText(getIntent().getStringExtra("com.example.myapplication.CUSTOMER"));
         ListView lv = (ListView) findViewById(R.id.ListV);
 
         ArrayList<String> values = new ArrayList<>();
-        String sql = "select concat(date_format(e.start,'%Y-%m-%d %H.%i') ,' - ',p.name) termin from customer c join events e on e.customer = c.id join product p on p.id = e.product and p.name like 'Ico%' and e.deleted=0  where CONVERT(BINARY CONVERT(concat(lastname ,' ', firstname) USING latin2) USING utf8)  like '%" + getIntent().getStringExtra("com.example.myapplication.CUSTOMER") + "%'  order by start desc";
+        String sql = "select concat(date_format(e.start,'%Y-%m-%d %H.%i') ,' - ',p.name) termin from customer c join events e on e.customer = c.id join product p on p.id = e.product and p.name like 'Cooltech%' and e.deleted=0 and e.start<NOW()  where CONVERT(BINARY CONVERT(concat(lastname ,' ', firstname) USING latin2) USING utf8)  like '%" + getIntent().getStringExtra("com.example.myapplication.CUSTOMER") + "%'  order by start desc";
 
         String msg = "";
         Connection conn = null;
@@ -75,4 +76,3 @@ public class Main3Activity extends AppCompatActivity {
     }
 
 }
-
